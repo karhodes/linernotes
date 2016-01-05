@@ -1,0 +1,47 @@
+<!doctype HTML>
+<html>
+
+	<head>
+
+		<title>Liner Notes</title>
+
+		<!-- CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+		<!-- JS -->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-route.min.js"></script>
+
+		<!-- ANGULAR CUSTOM -->
+		<script src="controllers/controller.js"></script>
+
+	</head>
+
+
+	<body ng-app="myApp" ng-controller="ctrl1">
+
+		<div class="container">
+
+			<h1>Liner Notes</h1>
+
+			<table class="table">
+				<thead>
+					<th>Artist</th>
+					<th>Album</th>
+					<th>Song</th>
+				</thead>
+				<tbody>
+					<tr ng-repeat="song in songlist">
+						<td>{{song.artist}}</td>
+						<td>{{song.album}}</td>
+						<td>{{song.title}}</td>
+					</tr>
+				</tbody>
+			</table>
+
+		</div>	
+
+	</body>
+
+
+</html>
