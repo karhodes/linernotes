@@ -30,7 +30,7 @@ app.use('/bower_components', express.static(__dirname + '/bower_components'));
 
 // Routes ******************************************************************
 // example:
-// app.use('/api/v1/order', require('./server/routes/api/v1/order/find.js')(express));
+app.use('/songlist', require('./server/routes/songlist/find.js')(express));
 
 // Start The Server ******************************************************************
 var server = app.listen(port, function() {

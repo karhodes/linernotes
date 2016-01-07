@@ -6,15 +6,17 @@ module.exports = function() {
   // var sequelize = db.connection;
 
   // TO DO:  Delete after Sequelize is setup
-  var db = mongojs('songlist', ['songlist']);	
+  var mongojs = require('mongojs');
+  var db = mongojs('songlist', ['songlist']);
 
   var defaultFail = function(err, doc){ console.log('err' + err + doc); };
   var defaultSanitize = function(uncleanData){ return uncleanData; };
 
   // Find all songs in DB via mongo
   var _findAll = function (success, fail){
-    db.songlist.find().then(success).catch(fail);
-    console.log(success);
+    //db.songlist.find().then(success).catch(fail);
+    //console.log(success);
+    console.log('finding all songs...');
   };  
 
 

@@ -16,6 +16,9 @@ var sass  				     = require('gulp-ruby-sass');
 var notify  			     = require('gulp-notify');
 var bower 				     = require('gulp-bower');
 
+// To Do:  Delete after transistioning to sequelize
+var mongojs            = require('mongojs');
+
 var config = {
      sassPath: './resources/sass',
      bowerDir: './bower_components' 
