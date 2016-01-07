@@ -1,10 +1,8 @@
-// LinerNotes Application Webpack | Webpack dependencies
-// =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// LinerNotes Application Webpack | Webpack dependencies *******************
 var path 	= require('path');
 var	webpack = require('webpack');
 
-// Module
-// =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// Module *****************************************************************
 // FIXME: no return
 module.exports = {
 	cache: 		true,

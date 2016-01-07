@@ -1,5 +1,5 @@
 # LinerNotes
-LinerNotes Application to search &amp; find new music
+LinerNotes Application to search &amp; find new music  
 Author:  Kelly Rhodes
 
 ## Initial Project Setup:

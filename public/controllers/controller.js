@@ -2,8 +2,8 @@ angular.module('myApp', [])
 	.controller('ctrl1', ['$scope', '$http', function($scope, $http) {
 	
 	console.log("Hello World from Controller 1!");	
-
-	var refresh = function(){
+	
+	/*var refresh = function(){
 		$http.get('/songlist').success(function(response){
 			console.log("I got the data I requested");
 			$scope.songlist = response;
@@ -11,7 +11,9 @@ angular.module('myApp', [])
 		});
 	};
 
-	refresh();	
+	refresh();
+	*/
+	/*
 
 	$scope.addSong = function(){
 		console.log($scope.song);
@@ -45,5 +47,6 @@ angular.module('myApp', [])
 	$scope.deselectSong = function(){
 		$scope.song = "";
 	}
+	*/
 
 }]);	

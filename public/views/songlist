@@ -1,0 +1,27 @@
+<!-- List of all songs in database -->
+<table class="table">
+	<thead>
+		<th>Artist</th>
+		<th>Album</th>
+		<th>Song</th>
+		<th>Action</th>
+		<th>&nbsp;</th>
+	</thead>
+	<tbody>
+		<tr>
+			<td><input class="form-control" ng-model="song.artist"></td>
+			<td><input class="form-control" ng-model="song.album"></td>
+			<td><input class="form-control" ng-model="song.title"></td>
+			<td><button class="btn btn-primary" ng-click="addSong()">Add Song</button></td>
+			<td><button class="btn btn-info" ng-click="updateSong()">Update Song</button>&nbsp;&nbsp;
+			<button class="btn btn-info" ng-click="deselectSong()">Deselect Song</button></td>
+		</tr>
+		<tr ng-repeat="song in songlist">
+			<td>{{song.artist}}</td>
+			<td>{{song.album}}</td>
+			<td>{{song.title}}</td>
+			<td><button class="btn btn-danger" ng-click="removeSong(song._id)">Remove Song</button></td>
+			<td><button class="btn btn-warning" ng-click="editSong(song._id)">Edit Song</button></td>
+		</tr>
+	</tbody>
+</table>
