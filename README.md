@@ -5,19 +5,19 @@ Author:  Kelly Rhodes
 ## Initial Project Setup:
 1.  Clone the repo to your local machine
 2.  In terminal, navigate to the repo folder; install NPM:
-..*```$ npm install```
+  *```$ npm install```
 3.  Install Gulp
-..*```$ npm install gulp --save-dev```
+  *```$ npm install gulp --save-dev```
 4.  Run Gulp
-..*```$ gulp```
+  *```$ gulp```
 5.  Navigate in your browser to localhost:7000
 
 ## Colophon:
 1.  MEAN Stack
-..*[MySQL & Sequelize](http://docs.sequelizejs.com/en/latest/):  Database 
-..*[AngularJS](https://angularjs.org/):  Front End Framework 
-..*[Express](http://expressjs.com/):  Node Framework 
-..*[NodeJS](https://nodejs.org/en/): Event Framework 
+  *[MySQL & Sequelize](http://docs.sequelizejs.com/en/latest/):  Database 
+  *[AngularJS](https://angularjs.org/):  Front End Framework 
+  *[Express](http://expressjs.com/):  Node Framework 
+  *[NodeJS](https://nodejs.org/en/): Event Framework 
 2.  Package Managers and Dependencies
 ..*[Gulp](http://gulpjs.com/):  Package Manager 
 ..*[Bower](http://bower.io/):  Front End Package Manager 
