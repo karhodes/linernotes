@@ -9,7 +9,7 @@ module.exports = {
 	debug: 		true,
 	devtool: 	'source-map',
 	entry: {
-		main: 	'./client/main.jsx'
+		main: 	'server.js'
 	},
 	output:{
 		path: 		path.join(__dirname, 'public/js'),

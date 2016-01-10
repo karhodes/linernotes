@@ -1,4 +1,5 @@
 // LinerNotes Application GULP ******************************************
+// Break into individual modules for css, js & server?
 var gulp 				       = require('gulp');
 var concat 				     = require('gulp-concat');
 var uglify 				     = require('gulp-uglify');
