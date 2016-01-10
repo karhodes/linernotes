@@ -29,8 +29,7 @@ app.use(express.static(__dirname + '/public'));
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
 
 // Routes ******************************************************************
-// example:
-app.use('/songlist', require('./server/routes/songlist/find.js')(express));
+app.use('/tracklist', require('./server/routes/tracklist/find.js')(express));
 
 // Start The Server ******************************************************************
 var server = app.listen(port, function() {
