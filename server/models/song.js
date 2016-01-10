@@ -1,5 +1,5 @@
 module.exports = function() {
-  console.log("Hello from song model");
+  console.log("Hello from track model");
 
   // var db = require('../db.js')();
   // var Sequelize = require('sequelize');
@@ -7,24 +7,24 @@ module.exports = function() {
 
   // TO DO:  Delete after Sequelize is setup
   var mongojs = require('mongojs');
-  var db = mongojs('songlist', ['songlist']);
+  var db = mongojs('tracklist', ['tracklist']);
 
   var defaultFail = function(err, doc){ console.log('err' + err + doc); };
   var defaultSanitize = function(uncleanData){ return uncleanData; };
 
-  // Find all songs in DB via mongo
+  // Find all tracks in DB via mongo
   var _findAll = function (success, fail){
-    //db.songlist.find().then(success).catch(fail);
+    //db.tracklist.find().then(success).catch(fail);
     //console.log(success);
-    console.log('finding all songs...');
+    console.log('finding all tracks...');
   };  
 
 
-  // TO DO:  create song table via sequelize
+  // TO DO:  create track table via sequelize
 
-  // TO DO:  Add song to DB
+  // TO DO:  Add track to DB
 
-  // TO DO:  Find all songs in DB via sql
+  // TO DO:  Find all tracks in DB via sql
   /*
   var _findAll = function (success, fail){
     order.findAll().then(success).catch(fail);
@@ -32,17 +32,17 @@ module.exports = function() {
   };
   */
 
-  // TO DO:  Find one song in DB
+  // TO DO:  Find one track in DB
 
-  // TO DO:  Remove a song from DB
+  // TO DO:  Remove a track from DB
 
-  // TO DO:  Update a song from DB
+  // TO DO:  Update a track from DB
 
   // TO DO:  Delete after working model
-  /*app.get('/songlist', function (req, res) {
+  /*app.get('/tracklist', function (req, res) {
     console.log("I received a GET request");
 
-    db.songlist.find(function(err,docs){
+    db.tracklist.find(function(err,docs){
     	console.log(docs);
     	res.json(docs);
     });
@@ -50,33 +50,33 @@ module.exports = function() {
     //res.sendfile('public/index.html');
 })
 
-app.post('/songlist', function(req, res){
+app.post('/tracklist', function(req, res){
 	console.log(req.body);
-	db.songlist.insert(req.body, function(err,doc){
+	db.tracklist.insert(req.body, function(err,doc){
 		res.json(doc);
 	});
 });
 
-app.delete('/songlist/:id', function(req,res){
+app.delete('/tracklist/:id', function(req,res){
 	var id = req.params.id;
 	console.log(id);
-	db.songlist.remove({_id:mongojs.ObjectId(id)},function(err,doc){
+	db.tracklist.remove({_id:mongojs.ObjectId(id)},function(err,doc){
 		res.json(doc);
 	})
 });
 
-app.get('/songlist/:id', function(req,res){
+app.get('/tracklist/:id', function(req,res){
 	var id = req.params.id;
 	console.log(id);
-	db.songlist.findOne({_id:mongojs.ObjectId(id)},function(err,doc){
+	db.tracklist.findOne({_id:mongojs.ObjectId(id)},function(err,doc){
 		res.json(doc);
 	});
 });
 
-app.put('/songlist/:id', function(req,res){
+app.put('/tracklist/:id', function(req,res){
 	var id = req.params.id;
 	console.log(req.body.title);
-	db.songlist.findAndModify({
+	db.tracklist.findAndModify({
 		query: {_id:mongojs.ObjectId(id)},
 		update: {$set: {
 			artist: req.body.artist,
