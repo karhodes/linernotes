@@ -2,7 +2,6 @@
 // Break into individual modules for css, js & server?
 var gulp 				       = require('gulp');
 var concat 				     = require('gulp-concat');
-var uglify 				     = require('gulp-uglify');
 var sourcemaps 			   = require('gulp-sourcemaps');
 var gutil 				     = require('gulp-util');
 var webpack 			     = require('webpack');
@@ -26,7 +25,7 @@ var config = {
 };
 
 // DEFAULT GULP TASKS ******************************************
-gulp.task('default', ['bower', 'css', 'icons', 'jshint', 'bundle', 'nodemon']);
+gulp.task('default', ['js:build','bower', 'css', 'icons', 'jshint', 'bundle', 'nodemon']);
 
 gulp.task('build-dev', ['webpack:build-dev'], function() {
   gulp.watch(['linernotes/**/*'], ['webpack:build-dev']);
@@ -49,6 +48,13 @@ gulp.task('bundle', function(done) {
 });
 
 // GULP TASKS ******************************************
+
+// JS Build:  Concatenate all the JS files from the client folder
+gulp.task('js:build', function () {
+  return gulp.src(['client/**/module.js', 'client/**/*.js'])
+    .pipe(concat('app.js'))
+    .pipe(gulp.dest('./public/js'))
+})
 
 // BOWER
 gulp.task('bower', function() { 
@@ -74,15 +80,6 @@ gulp.task('css', function () {
   })
     .on('error', sass.logError)
     .pipe(gulp.dest('./public/css'));
-});
-
-// UGLIFY 
-gulp.task('uglify', function() {
-  gulp.src('public/js')
-    .pipe(sourcemaps.init())
-    .pipe(uglify())
-    .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest('public/js'));
 });
 
 // JSHINT
