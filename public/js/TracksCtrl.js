@@ -23,7 +23,14 @@ angular.module('myapp')
 
 		console.log("Hello from TracksCtrl!");
 
-    	$scope.tracklist = TracksSvc.fetchTracks();
+		$scope.tracklist = TracksSvc.fetchTracks();
+    	
+		/* Use after api is set up
+    	TracksSvc.fetchTracks()
+    		.then(function(tracklist){
+    			$scope.tracklist = tracklist;
+    		});
+    	*/	
   			
 
 		/*
