@@ -1,12 +1,12 @@
-// API for finding all songs
+// API for finding all tracks
 
-console.log("Hello from songlist find.js");
+console.log("Hello from tracklist find.js");
 
 module.exports = function (express) {
   var router = express.Router();
-  var song = require('../../models/song.js');
+  var track = require('../../models/track.js');
 
-  // /songlist/find
+  // /tracklist/find
   router.post('/find', function(req, res) {
     res.send("hello");
 
@@ -17,15 +17,15 @@ module.exports = function (express) {
     // Request made from client
     var clientFindPost = req.body;
 
-    song.findAll(function(data) {
+    track.findAll(function(data) {
 
       // Server message of the request
-      console.log('A find request for all songs has been made');
+      console.log('A find request for all tracks has been made');
 
       res.json({
         serverMessage: serverMessage,
         serverResponse: serverResponse,
-        songlist: data
+        tracklist: data
       });
     },
 

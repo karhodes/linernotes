@@ -5,12 +5,20 @@ Author:  Kelly Rhodes
 ## Initial Project Setup:
 1. Clone the repo to your local machine
 2. In terminal, navigate to the repo folder; install NPM:
-  ```$ npm install```
-3. Install Gulp
-  ```$ npm install gulp --save-dev```
-4. Run Gulp
-  ```$ gulp```
-5. Navigate in your browser to localhost:7000
+  * ```$ npm install```
+3. Install Gulp globally:
+  * ```$ npm install --global gulp```
+4. Install Gulp locally:
+  * ```$ npm install gulp --save-dev```
+5. Run Gulp
+  * ```$ gulp```
+6. Navigate in your browser to localhost:7000
+
+## To Run Tests (Development only):
+1. Install Karma globally via terminal:
+  *```$ npm install --global karma-cli```
+2. Navigate to repo folder via terminal & run Karma:
+	*```$ karma```
 
 ## Colophon:
 1. MEAN Stack
@@ -34,7 +42,7 @@ Author:  Kelly Rhodes
 5. Testing Tools
   * [Karma](http://karma-runner.github.io/0.13/index.html): JS Test Runner
   * [Protractor](https://angular.github.io/protractor/#/):   End to end testing for Angular JS
-  * [Chai](http://chaijs.com/):  Javascript Testing Framework  
+  * [Chai](http://chaijs.com/):  Javascript Assertation Library  
   * [Mocha](https://mochajs.org/):  Javascript Testing Framework 
 
 
