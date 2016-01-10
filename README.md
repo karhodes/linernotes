@@ -5,11 +5,11 @@ Author:  Kelly Rhodes
 ## Initial Project Setup:
 1. Clone the repo to your local machine
 2. In terminal, navigate to the repo folder; install NPM:
-  * ```$ npm install```
+  ```$ npm install```
 3. Install Gulp
-  * ```$ npm install gulp --save-dev```
+  ```$ npm install gulp --save-dev```
 4. Run Gulp
-  * ```$ gulp```
+  ```$ gulp```
 5. Navigate in your browser to localhost:7000
 
 ## Colophon:
