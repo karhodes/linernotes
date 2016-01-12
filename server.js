@@ -6,7 +6,7 @@ var bodyParser 	= require('body-parser');
 // var mysql 		= require('mysql');
 
 // To do:  Delete after sequelize is working
-var mongojs		= require('mongojs');
+// var mongojs		= require('mongojs');
 
 // Initialize Application ******************************************************
 var app 		= express();
@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-// set the static files location /public/img will be /img for users
+// Set the static files location /public/img will be /img for users
 app.use(express.static(__dirname + '/public')); 
 
 // add this so the browser can GET the bower files

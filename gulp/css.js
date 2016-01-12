@@ -1,31 +1,24 @@
 // LinerNotes GULP for CSS ******************************************
+
+// Dependencies
 var gulp 				       = require('gulp');
 var sourcemaps 			   = require('gulp-sourcemaps');
 var sass  				     = require('gulp-ruby-sass');
+var autoprefixer       = require('gulp-autoprefixer');
 
-gulp.task('css:build', function () {
-  gulp.src('./sass/**/*.sass')
-    .pipe(sourcemaps.init())
-    .pipe(sass.sync().on('error', sass.logError))
-    .pipe(sourcemaps.write('./maps'))
-    .pipe(gulp.dest('./public/css'));
-});
- 
-gulp.task('css:watch', ['css:build'], function () {
-  gulp.watch('./sass/**/*.sass', ['css:build']);
-});
+var config = {
+     sassPath: './resources/sass',
+     bowerDir: './bower_components' 
+};
 
-
-
-
-// FONT AWESOME
+// Move fonts from Font Awesome to Public
 gulp.task('icons', function() { 
     return gulp.src(config.bowerDir + '/fontawesome/fonts/**.*') 
         .pipe(gulp.dest('./public/fonts')); 
 });
 
-// BOOTSTRAP SASS
-gulp.task('css', function () {
+// Setting up SASS, linking bootstrap and Font Awesome
+gulp.task('bootstrap', function () {
   return sass('resources/**/*.scss',{
     style: 'compressed',
              loadPath: [
@@ -37,4 +30,19 @@ gulp.task('css', function () {
     .on('error', sass.logError)
     .pipe(gulp.dest('./public/css'));
 });
+
+// CSS Build (Called in gulpfile):
+gulp.task('css:build', ['icons', 'bootstrap']);
+
+// CSS Watch (Called in gulpfile):
+gulp.task('css:watch', ['css:build'], function () {
+  gulp.watch('./sass/**/*.sass', ['css:build']);
+});
+
+
+
+
+
+
+
 

@@ -6,14 +6,14 @@ var ngAnnotate = require('gulp-ng-annotate')
 var plumber = require('gulp-plumber')
 
 gulp.task('js:build', function () {
-  return gulp.src(['./ng/**/module.js', 'ng/**/*.js'])
+  return gulp.src(['ng/**/module.js', 'ng/**/*.js'])
     .pipe(plumber())
     .pipe(ngAnnotate())
-    // .pipe(uglify())
-    // .pipe(concat('./app.js'))
-    .pipe(gulp.dest('./public/js'))
+    .pipe(uglify())
+    .pipe(concat('app.js'))
+    .pipe(gulp.dest('public'))
 })
 
 gulp.task('js:watch', ['js:build'], function () {
-  gulp.watch('./ng/**/*.js', ['js:build'])
+  gulp.watch('ng/**/*.js', ['js:build'])
 })
