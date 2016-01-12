@@ -1,0 +1,1 @@
+angular.module("myapp").controller("TracksCtrl",["$scope","TracksSvc",function(c,l){console.log("Hello from TracksCtrl!"),c.tracklist=l.fetchTracks()}]);

@@ -5,10 +5,10 @@ angular.module('myapp')
 		$locationProvider.html5Mode(true);
 		$routeProvider
 			.when('/', {
-				templateUrl: '/views/home.html'
+				templateUrl: '/templates/home.html'
 			})
 			.when('/tracklist', {
-				templateUrl: '/views/tracklist.html', 
+				templateUrl: '/templates/tracklist.html', 
 				controller: 'TracksCtrl'
 			})
 			.otherwise({ redirectTo: '/' });

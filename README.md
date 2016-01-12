@@ -7,18 +7,18 @@ Author:  Kelly Rhodes
 2. In terminal, navigate to the repo folder; install NPM:
   * ```$ npm install```
 3. Install Gulp globally:
-  * ```$ npm install --global gulp```
+  * ```$ npm install --g gulp```
 4. Install Gulp locally:
-  * ```$ npm install gulp --save-dev```
+  * ```$ npm install gulp --save```
 5. Run Gulp
   * ```$ gulp```
 6. Navigate in your browser to localhost:7000
 
 ## To Run Tests (Development only):
 1. Install Karma globally via terminal:
-  *```$ npm install --global karma-cli```
+  * ```$ npm install --g karma-cli```
 2. Navigate to repo folder via terminal & run Karma:
-	*```$ karma```
+	* ```$ karma```
 
 ## Colophon:
 1. MEAN Stack
@@ -30,11 +30,8 @@ Author:  Kelly Rhodes
   * [Gulp](http://gulpjs.com/):  Package Manager 
   * [Bower](http://bower.io/):  Front End Package Manager 
   * [Body-Parser](https://github.com/expressjs/body-parser):  Node.js body parsing middleware 
-  * [WebPack](https://webpack.github.io/):  Module bundler 
-  * [Babel](https://babeljs.io/):  Javascript compiler 
 3. Real Time Developement
-  * [Nodemon](http://nodemon.io/): Automatic Server Restart based on changes 
-  * [React-Hot-Loader](https://gaearon.github.io/react-hot-loader/):  Modify react components in real time 
+  * [Nodemon](http://nodemon.io/): Automatic Server Restart based on changes  
   * [Socket.io](http://socket.io/):  Allows streaming 
 4. CSS Tools
   * [Bootstrap](http://getbootstrap.com/):  Front End Framework

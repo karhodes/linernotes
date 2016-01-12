@@ -4,7 +4,7 @@ var Post = require('../server/models/song');
 
 router.use(bodyParser.json())
 
-router.get('/tracks', function (req,res,next) {
+router.get('/tracklist', function (req,res,next) {
 	Post.find()
 	.sort('-date')
 	.exec(function (err,posts) {
@@ -13,7 +13,7 @@ router.get('/tracks', function (req,res,next) {
 	})
 })
 
-router.post('/tracks', function (req,res,next) {
+router.post('/tracklist', function (req,res,next) {
 	var track = new Track({status: req.body.status})
 	// track.createIndex({'stat':1}, {unique:true})
 	track.save(function (err) {
