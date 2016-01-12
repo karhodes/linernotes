@@ -7,7 +7,7 @@ var sass  		 = require('gulp-ruby-sass');
 var autoprefixer = require('gulp-autoprefixer');
 
 var config = {
-     sassPath: './resources/sass',
+     sassPath: './css/sass',
      bowerDir: './bower_components' 
 };
 
@@ -19,10 +19,10 @@ gulp.task('icons', function() { 
 
 // Setting up SASS, linking bootstrap and Font Awesome
 gulp.task('bootstrap', function () {
-  return sass('resources/**/*.scss',{
+  return sass('css/**/*.scss',{
     style: 'compressed',
              loadPath: [
-                 './resources/sass',
+                 './css/sass',
                  config.bowerDir + '/bootstrap-sass/assets/stylesheets',
                  config.bowerDir + '/font-awesome/scss',
              ]
