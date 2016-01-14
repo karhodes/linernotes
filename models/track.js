@@ -1,8 +1,22 @@
 var db = require('../db')
 
 module.exports = db.model('Track', {
-  status: {type:String, required:true}
-})
+  artist: 
+    {
+      type:String,
+      required: true
+    },
+  album: 
+    {
+      type:String, 
+      required: true
+    },
+  trackTitle: 
+    {
+      type:String 
+      //required: true
+    }
+});
 
 
 
@@ -15,9 +29,7 @@ module.exports = db.model('Track', {
   // var Sequelize = require('sequelize');
   // var sequelize = db.connection;
 
-  // TO DO:  Delete after Sequelize is setup
-  var mongojs = require('mongojs');
-  var db = mongojs('tracklist', ['tracklist']);
+  
 
   var defaultFail = function(err, doc){ console.log('err' + err + doc); };
   var defaultSanitize = function(uncleanData){ return uncleanData; };

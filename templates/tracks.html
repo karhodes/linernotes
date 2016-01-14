@@ -15,14 +15,13 @@
 			<tr>
 				<td><input class="form-control" ng-model="track.artist"></td>
 				<td><input class="form-control" ng-model="track.album"></td>
-				<td><input class="form-control" ng-model="track.title"></td>
+				<td><input class="form-control" ng-model="track.trackTitle"></td>
 			</tr>
 			<tr ng-repeat="track in tracklist">
-				<td>{{track._id}}</td>
-				<td>{{track.status}}</td>
-
+				<td>{{track.artist}}</td>
+				<td>{{track.album}}</td>
+				<td>{{track.trackTitle}}</td>
 			</tr>
-
 		</tbody>
 	</table>
 </div>

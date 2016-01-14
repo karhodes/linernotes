@@ -17,14 +17,16 @@ router.get('/tracks', function(req,res,next){
 	})
 })
 
-router.post('/tracks', function (req, res,next) {
-  
-  var track = new Track({status: req.body.status})
+router.post('/tracks', function (req, res, next) { 
+	var track = new Track({
+		artist: req.body.artist,
+		album: req.body.album, 
+		trackTitle: req.body.trackTitle
+  })
   track.save(function (err) {
     if (err) { next(err) }
     res.status(201).end()
   })
-
 })
 
 // Send 404 response if something other than a defined route is pinged
