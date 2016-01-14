@@ -3,6 +3,6 @@ angular.module('myapp')
 
 		console.log("Hello from TracksCtrl!");
 
-		// $scope.tracklist = TracksSvc.fetchTracks();
+		$scope.tracklist = TracksSvc.fetchTracks();
 
 }]);

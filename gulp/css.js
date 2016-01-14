@@ -7,7 +7,6 @@ var sass  		 = require('gulp-ruby-sass');
 var autoprefixer = require('gulp-autoprefixer');
 
 var config = {
-     sassPath: './css/sass',
      bowerDir: './bower_components' 
 };
 
@@ -18,25 +17,25 @@ gulp.task('icons', function() { 
 });
 
 // Setting up SASS, linking bootstrap and Font Awesome
-gulp.task('bootstrap', function () {
-  return sass('css/**/*.scss',{
-    style: 'compressed',
+gulp.task('cssBuild', function() { 
+    return sass('css/sass/style.scss', {
+             style: 'compressed',
              loadPath: [
                  './css/sass',
                  config.bowerDir + '/bootstrap-sass/assets/stylesheets',
                  config.bowerDir + '/font-awesome/scss',
              ]
-  })
-    .on('error', sass.logError)
-    .pipe(gulp.dest('./public/css'));
+         }) 
+         .pipe(gulp.dest('./public/css')); 
 });
 
+
 // CSS Build (Called in gulpfile):
-gulp.task('css:build', ['icons', 'bootstrap']);
+gulp.task('css:build', ['icons', 'cssBuild']);
 
 // CSS Watch (Called in gulpfile):
 gulp.task('css:watch', ['css:build'], function () {
-  gulp.watch('./sass/**/*.sass', ['css:build']);
+  gulp.watch('./css/**/*.scss', ['css:build']);
 });
 
 

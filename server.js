@@ -15,7 +15,7 @@ app.use('/templates', express.static('templates'));
 app.use(express.static(__dirname + '/public')); 
 
 // Allows the browser to GET the bower files
-app.use('/bower_components', express.static(__dirname + '/bower_components'));
+app.use('/bower', express.static(__dirname + '/bower'));
 
 // Use api/index.js
 app.use('/api', require('./api'))

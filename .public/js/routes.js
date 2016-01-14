@@ -1,1 +1,0 @@
-angular.module("myapp").config(["$routeProvider","$locationProvider",function(e,t){t.html5Mode(!0),e.when("/",{templateUrl:"/templates/home.html"}).when("/tracks",{templateUrl:"/templates/tracks.html",controller:"TracksCtrl"}).otherwise({redirectTo:"/"})}]);

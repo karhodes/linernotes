@@ -1,1 +1,0 @@
-angular.module("myapp").service("TracksSvc",["$http",function(t){this.fetchTracks=function(){return t.get("/api/tracks").then(function(t){return t.data})},this.create=function(t){}}]);
