@@ -10,7 +10,7 @@ var config = {
 // Run bower to update front end dependencies
 gulp.task('bower', function() {
   return bower('./bower_components')
-    .pipe(gulp.dest('config.bowerDir'))
+    .pipe(gulp.dest('bower'))
 });
 
 fs.readdirSync('./gulp').forEach(function (module) {

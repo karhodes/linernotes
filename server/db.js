@@ -1,1 +1,0 @@
-// Sequelize Database for LinerNotes

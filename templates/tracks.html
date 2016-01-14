@@ -1,0 +1,28 @@
+<!-- List of all tracks in database -->
+
+<h2>I'm the tracklist page!</h2>
+
+<div ng-controller="TracksCtrl">
+	<table class="table">
+		<thead>
+			<th>Artist</th>
+			<th>Album</th>
+			<th>Track</th>
+			<th>Action</th>
+			<th>&nbsp;</th>
+		</thead>
+		<tbody>
+			<tr>
+				<td><input class="form-control" ng-model="track.artist"></td>
+				<td><input class="form-control" ng-model="track.album"></td>
+				<td><input class="form-control" ng-model="track.title"></td>
+			</tr>
+			<tr ng-repeat="track in tracklist">
+				<td>{{track.artist}}</td>
+				<td>{{track.album}}</td>
+				<td>{{track.title}}</td>
+
+			</tr>
+		</tbody>
+	</table>
+</div>

@@ -13,7 +13,7 @@ gulp.task('js:build', function () {
     .pipe(plumber())
     .pipe(ngAnnotate())
     .pipe(uglify())
-    //.pipe(concat('app.js'))
+    .pipe(concat('app.js'))
     .pipe(gulp.dest('.public/js'))
 })
 

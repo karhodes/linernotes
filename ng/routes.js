@@ -7,8 +7,8 @@ angular.module('myapp')
 			.when('/', {
 				templateUrl: '/templates/home.html'
 			})
-			.when('/tracklist', {
-				templateUrl: '/templates/tracklist.html', 
+			.when('/tracks', {
+				templateUrl: '/templates/tracks.html', 
 				controller: 'TracksCtrl'
 			})
 			.otherwise({ redirectTo: '/' });

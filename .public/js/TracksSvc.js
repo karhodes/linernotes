@@ -1,1 +1,1 @@
-angular.module("myapp").service("TracksSvc",["$http",function(t){this.fetchTracks=function(){return[{artist:"Track 1 Artist",album:"Track 1 Album",title:"Track 1 Title"},{artist:"Track 2 Artist",album:"Track 2 Album",title:"Track 2 Title"},{artist:"Track 3 Artist",album:"Track 3 Album",title:"Track 3 Title"}]},this.create=function(t){}}]);
+angular.module("myapp").service("TracksSvc",["$http",function(t){this.fetchTracks=function(){return t.get("/api/tracks").then(function(t){return t.data})},this.create=function(t){}}]);

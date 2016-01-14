@@ -2,11 +2,6 @@
 var express 	= require('express');
 var morgan 		= require('morgan');
 
-// To do:  Delete after sequelize is working
-// var dotenv 	= require('dotenv').load();
-// var mysql 	= require('mysql');
-// var mongojs		= require('mongojs');
-
 var app 		= express();
 var port 		= process.env.PORT || 7000;
 
