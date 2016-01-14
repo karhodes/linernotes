@@ -1,9 +1,6 @@
 var db = require('../db')
 
 module.exports = db.model('Track', {
-  //artist: {type:String, required:true},
-  //album: {type:String, required:true},
-  //title: {type:String, required:true},
   status: {type:String, required:true}
 })
 
