@@ -7,6 +7,8 @@ var Track = require('../models/track')
 
 router.use(bodyParser.json())
 
+// ****************************************************************
+// Get all tracks from api
 router.get('/tracks', function(req,res,next){
 	Track.find()
 	//.sort('-date')
@@ -17,6 +19,7 @@ router.get('/tracks', function(req,res,next){
 	})
 })
 
+// Post a new Track
 router.post('/tracks', function (req, res, next) { 
 	var track = new Track({
 		artist: req.body.artist,
