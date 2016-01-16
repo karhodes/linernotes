@@ -1,3 +1,5 @@
+'use strict';
+
 var db = require('../db')
 var Sequelize = require('sequelize');
 
@@ -11,4 +13,5 @@ module.exports = db.define('Track', {
   title: {
     type: Sequelize.STRING
   }
+
 });

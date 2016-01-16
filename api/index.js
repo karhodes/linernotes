@@ -1,6 +1,8 @@
 // Dependencies for api
 var router = require('express').Router()
 var bodyParser = require('body-parser')
+var mysql 	= require('mysql');
+var Sequelize = require('sequelize');
 
 // Models required for api
 var Track = require('../models/track')
@@ -10,13 +12,15 @@ router.use(bodyParser.json())
 // ****************************************************************
 // Get all tracks from api
 router.get('/tracks', function(req,res,next){
-	Track.find()
+	res.send("Hello!");
+	//Track.findAll()
 	//.sort('-date')
 	// if large db do ensure index
+	/*
 	.exec(function(err, tracks){
 		if(err){next(err)}
 		res.json(tracks)
-	})
+	})*/
 })
 
 // Post a new Track

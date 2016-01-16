@@ -2,9 +2,27 @@
 LinerNotes Application to search &amp; find new music  
 Author:  Kelly Rhodes
 
+## Configure Database:
+1.  In a new terminal window, log into mysql:
+  * ```$ mysql.server start```
+2.  Log in as root: 
+  * ```$ mysql -u root```
+3.  Restart mysql server:
+  * ```$ mysql.server restart```
+4.  Create the database linernotes:
+  * ```mysql> create database linernotes;```
+5.  Create a .env file for your local environmental variables; store in the main directory.
+```
+DB_HOST = 127.0.0.1
+DB_NAME = gravity
+MYSQL_NAME = {local user} // usually root
+MYSQL_PASS = {local password} // standard install set to blank
+DB_PORT = {local port running mysql} // standard port is 3306
+```    
+
 ## Initial Project Setup:
 1. Clone the repo to your local machine
-2. In terminal, navigate to the repo folder; install NPM:
+2. In a new terminal window, navigate to the repo folder; install NPM:
   * ```$ npm install```
 3. Install Gulp globally:
   * ```$ npm install --g gulp```
@@ -13,6 +31,12 @@ Author:  Kelly Rhodes
 5. Run Gulp
   * ```$ gulp```
 6. Navigate in your browser to localhost:7000
+
+## Update Database (after schema changes):
+1.  From the terminal window running mysql, drop the previous database:
+  * ```mysql> drop database linernotes;```
+2.  Create the new database:
+  * ```mysql> create database linernotes;```  
 
 ## To Run Tests (Development only):
 1. Install Karma globally via terminal:

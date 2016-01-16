@@ -13,4 +13,14 @@ var sequelize = new Sequelize(process.env.DB_NAME, process.env.MYSQL_NAME, proce
 	pool: {max: 5, min: 0, idle: 10000}
 });
 
+var test = sequelize.authenticate().then(function(){
+      console.log("connected");
+    }).catch(function(err){
+      console.log("something goofed", err);
+    })
+    .done();
+
+
+
+sequelize.sync();
 module.exports = sequelize;

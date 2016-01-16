@@ -1,4 +1,4 @@
-// Provides routes for myapp
+// LinerNotes application: provides routes for myapp
 
 angular.module('myapp')
 	.config(function ($routeProvider, $locationProvider) {
