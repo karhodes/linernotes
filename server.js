@@ -18,13 +18,12 @@ app.use(express.static(__dirname + '/public'));
 // Allows the browser to GET the bower files
 app.use('/bower', express.static(__dirname + '/bower'));
 
-// Use api/index.js
-app.use('/api', require('./api'))
-
 // Allows for navigation from other pages than homepage
 app.get('/', function(req, res){
 	res.render('index.html.ejs');
 })
+
+var db = require('./db.js');
 
 // Start The Server *************************************
 var server = app.listen(port, function() {
