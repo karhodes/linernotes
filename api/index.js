@@ -12,33 +12,48 @@ router.use(bodyParser.json())
 // ****************************************************************
 // Get all tracks from api
 router.get('/tracks', function(req,res,next){
-	res.send("Hello!");
-	//Track.findAll()
-	//.sort('-date')
-	// if large db do ensure index
-	/*
-	.exec(function(err, tracks){
+	console.log("Hello from index api / tracks!");
+	
+	var tracks = Track.findAll();
+	console.log(tracks);
+	res.json(tracks);
+	
+	/*.exec(function(err, tracks){
 		if(err){next(err)}
 		res.json(tracks)
 	})*/
 })
 
 // Post a new Track
-router.post('/tracks', function (req, res, next) { 
-	var track = new Track({
-		artist: req.body.artist,
-		album: req.body.album, 
-		trackTitle: req.body.trackTitle
-  })
-  track.save(function (err) {
-    if (err) { next(err) }
-    res.status(201).end()
-  })
-})
+router.post('/create', function (req, res, next) { 
+
+	console.log("Hello from api / create");
+
+	var serverMessage = "Your track is being created";
+	var serverResponse = "Your track was successfully created";
+
+	// Dummy data
+	var clientTrackPost = {
+		"artist" : "artist1",
+		"album" : "album1",
+		"track" : "track1"
+	}
+
+	//var clientTrackPost = req.body;
+	console.log(clientTrackPost);
+
+	Track.create({
+		artist: clientTrackPost.artist,
+		album: clientTrackPost.album, 
+		track: clientTrackPost.track
+  	});
+});  	
+
 
 // Send 404 response if something other than a defined route is pinged
-router.get('*', function (req, res) {
+/*router.get('*', function (req, res) {
   res.status(404).end()
 })
+*/
 
 module.exports = router

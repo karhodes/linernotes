@@ -22,7 +22,7 @@ app.use('/bower', express.static(__dirname + '/bower'));
 app.use('/api', require('./api'))
 
 // Allows for navigation from other pages than homepage
-app.get('*', function(req, res){
+app.get('/', function(req, res){
 	res.render('index.html.ejs');
 })
 
