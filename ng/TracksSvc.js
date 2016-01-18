@@ -6,7 +6,7 @@ angular.module('myapp')
 	console.log("Hello from Tracks Service!");
 	
 	this.fetchTracks = function () {
-		return $http.get('/api/tracks')
+		return $http.get('/tracks')
 		.then(function (response) {
 			console.log(response);
 			return response.data

@@ -8,8 +8,7 @@ module.exports = function(sequelize, DataTypes) {
       artist: DataTypes.STRING,
       album: DataTypes.STRING,
       trackTitle: DataTypes.STRING
-    }
-  );
+  });
 
   return Track;
 };

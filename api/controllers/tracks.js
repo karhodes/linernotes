@@ -12,7 +12,7 @@ var db = require('../../db.js');
  */
 exports.track = function(req, res, next, id) {
     console.log('id => ' + id);
-    db.Track.find({ where: {id: id}).then(function(track){
+    db.Track.find({where: {id: id}}).then(function(track){
         if(!track) {
             return next(new Error('Failed to load track ' + id));
         } else {

@@ -4,19 +4,24 @@
 * Module dependencies.
 */
 
-tracks = require('../../api/controllers/tracks');
+module.exports = function (express) {
 
-module.exports = function(app) {
+	var router = express.Router();
+	var tracks = require('../../api/controllers/tracks');
+
+
 // Tracks Routes
-app.route('/tracks')
+router.route('/tracks')
     .get(tracks.all)
     .post(tracks.create);
-app.route('/tracks/:tracksId')
+router.route('/tracks/:tracksId')
     .get(tracks.show)
     .put(tracks.update)
-    .delete(trackss.destroy);
+    .delete(tracks.destroy);
 
 // Finish with setting up the trackId param
 // Note: the tracks.tracks function will be called everytime then it will call the next function.
-app.param('trackId', tracks.track);
+router.param('trackId', tracks.track);
+
+return router;
 };
