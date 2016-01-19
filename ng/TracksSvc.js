@@ -3,8 +3,6 @@
 
 angular.module('myapp')
 .service('TracksSvc', function ($http) {
-
-	console.log("Hello from Tracks Service!");
 	
 	// Return all tracks from API *********************************
 	this.fetchTracks = function(){
@@ -17,7 +15,6 @@ angular.module('myapp')
 
 	// Add a track to the DB via API *********************************
 	this.addTrack = function (track) {
-		console.log(track);
 		return $http.post('/tracks', track)	
 	}
 

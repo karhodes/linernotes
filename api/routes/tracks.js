@@ -6,7 +6,10 @@ module.exports = function () {
 	var path = require('path');
 	var express = require('express');
 	var router = express.Router();
+	var bodyParser = require('body-parser');
 	var ejs = require('ejs');
+
+	router.use(bodyParser.json())
 
 	// Controllers for tracks routes *************************************************
 	var tracks = require('../controllers/tracks')();

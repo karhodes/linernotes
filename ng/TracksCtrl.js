@@ -13,11 +13,10 @@ angular.module('myapp')
 
 		refresh();
 
-		$scope.addTrack = function(status) {
-			console.log($scope.track);
+		$scope.addTrack = function(){
 			TracksSvc.addTrack($scope.track);
-			.then(refresh);
-		}
+		};
+
 
 
 }]);

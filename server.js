@@ -8,6 +8,9 @@ var path 		= require('path');
 var router 		= require('./api/routes/tracks.js');
 var port 		= process.env.PORT || 7000;
 
+
+// App Configuration **********************************
+
 // Logging request details (dev only)
 app.use(morgan('dev'))
 
@@ -21,6 +24,7 @@ app.use(express.static(__dirname + '/public'));
 // Allows the browser to GET the bower files
 app.use('/bower', express.static(__dirname + '/bower'));
 
+// Require the database file
 var db = require('./db.js');
 
 // Tell app which router to use...
