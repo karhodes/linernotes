@@ -1,25 +1,27 @@
-// LinerNotes application:  Routes for tracks
+// LinerNotes application:  API Routes for Tracks
 
 module.exports = function () {
 
 	console.log("Hello from router!");
 
-	// Module dependencies
+	// Module dependencies ***********************************************************
 	var path = require('path');
 	var express = require('express');
 	var router = express.Router();
 	var ejs = require('ejs');
 
-	// Controllers for tracks routes
-	var tracks = require('../controllers/tracks');
+	// Controllers for tracks routes *************************************************
+	var tracks = require('../controllers/tracks')();
 
-	// Tracks Routes
-	router.get('/', function(req,res){
-		res.send("Brandy is awesome!");
-	});
+	// Tracks Routes ****************************************************************
+	// router.get('/', function(req,res){
+	// 	res.sendfile(path.normalize(__dirname + '/../../templates/index.ejs'));
+	// 	console.log("huzzah!");
+	// })
 
-	router.route('/')
-    	.get(tracks.all);
+	console.log(tracks);
+
+	router.get('/', tracks.all);
 
     /*	
     	.post(tracks.create);

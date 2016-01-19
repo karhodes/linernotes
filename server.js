@@ -35,9 +35,9 @@ app.use('/tracks',router());
 
 
 // Allows for navigation from other pages than homepage
-// app.get('/', function(req, res){
-// 	res.render('index.html.ejs');
-// })
+ app.get('/', function(req, res){
+ 	res.render('index.html.ejs');
+ })
 
 // Start The Server *************************************
 var server = app.listen(port, function() {

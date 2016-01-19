@@ -1,4 +1,4 @@
-// LinerNotes Application:  Track Model
+// LinerNotes Application:  API Model for Tracks
 'use strict';
 
 
@@ -10,9 +10,13 @@ module.exports = function(sequelize, DataTypes) {
       trackTitle: DataTypes.STRING
   });
 
+  // Note:  For adding associations, see here:
+	// https://github.com/jpotts18/mean-stack-relational/blob/master/app/models/article.js
+
   return Track;
+
+
+
 };
 
 
-// Note:  For adding associations, see here:
-// https://github.com/jpotts18/mean-stack-relational/blob/master/app/models/article.js
