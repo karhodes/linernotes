@@ -1,7 +1,6 @@
 // LinerNotes Application:  API Model for Tracks
 'use strict';
 
-
 module.exports = function(sequelize, DataTypes) {
 
   var Track = sequelize.define('Track', {
@@ -11,12 +10,10 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   // Note:  For adding associations, see here:
-	// https://github.com/jpotts18/mean-stack-relational/blob/master/app/models/article.js
+  // https://github.com/jpotts18/mean-stack-relational/blob/master/app/models/article.js
 
   return Track;
-
-
-
+  
 };
 
 

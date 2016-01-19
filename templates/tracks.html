@@ -16,11 +16,16 @@
 				<td><input class="form-control" ng-model="track.artist"></td>
 				<td><input class="form-control" ng-model="track.album"></td>
 				<td><input class="form-control" ng-model="track.trackTitle"></td>
+				<td><button class="btn btn-primary" ng-click="addTrack()">Add Track</button></td>
+				<td><button class="btn btn-info" ng-click="updateTrack()">Update Track</button>&nbsp;&nbsp;
+				<button class="btn btn-info" ng-click="deselectTrack()">Deselect Track</button></td>
 			</tr>
 			<tr ng-repeat="track in tracklist track by $index">
 				<td>{{track.artist}}</td>
 				<td>{{track.album}}</td>
 				<td>{{track.trackTitle}}</td>
+				<td><button class="btn btn-danger" ng-click="removeTrack(track._id)">Remove Track</button></td>
+				<td><button class="btn btn-warning" ng-click="editTrack(track._id)">Edit Track</button></td>
 			</tr>
 		</tbody>
 	</table>

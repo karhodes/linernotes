@@ -2,8 +2,6 @@
 
 module.exports = function () {
 
-	console.log("Hello from router!");
-
 	// Module dependencies ***********************************************************
 	var path = require('path');
 	var express = require('express');
@@ -14,15 +12,11 @@ module.exports = function () {
 	var tracks = require('../controllers/tracks')();
 
 	// Tracks Routes ****************************************************************
-	// router.get('/', function(req,res){
-	// 	res.sendfile(path.normalize(__dirname + '/../../templates/index.ejs'));
-	// 	console.log("huzzah!");
-	// })
-
-	console.log(tracks);
 
 	router.get('/', tracks.all);
+	router.post('/', tracks.create);
 
+   
     /*	
     	.post(tracks.create);
 	router.route('/:trackId')

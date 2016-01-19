@@ -1,4 +1,3 @@
 angular.module("myapp",["ngRoute"]);
-angular.module("myapp").controller("TracksCtrl",["$scope","TracksSvc",function(c,r){r.fetchTracks().then(function(r){c.tracklist=r})}]);
-angular.module("myapp").service("TracksSvc",["$http",function(c){console.log("Hello from Tracks Service!"),this.fetchTracks=function(){return c.get("/tracks").then(function(c){return console.log(c),c.data})}}]);
+angular.module("myapp").service("TracksSvc",["$http",function(t){console.log("Hello from Tracks Service!"),this.fetchTracks=function(){return t.get("/tracks").then(function(t){return console.log(t),t.data})},this.addTrack=function(c){return console.log(c),t.post("/tracks",c)}}]);
 angular.module("myapp").config(["$routeProvider","$locationProvider",function(e,t){t.html5Mode(!0),e.when("/",{templateUrl:"/templates/home.html"}).when("/tracks",{templateUrl:"/templates/tracks.html",controller:"TracksCtrl"}).otherwise({redirectTo:"/"})}]);
