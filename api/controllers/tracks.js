@@ -27,21 +27,7 @@ module.exports = function() {
     */
     // Create an entry (track) in the DB ********************************************
     exports.create = function(req, res, next) {
-        
-        console.log("exports.create is: ");
-        console.log(req.headers);
-        console.log(req.body);
-
-
-        // Save and return an instance of data on the res object 
         db.Track.create({
-
-            
-
-            //artist: 'artist2',
-            //album: 'album2',
-            //trackTitle: 'trackTitle2'
-
             artist : req.body.artist,
             album : req.body.album,
             trackTitle : req.body.trackTitle
@@ -72,32 +58,35 @@ module.exports = function() {
         });
     };
 
+*/    
+
     // Delete a track ***********************************************************
     exports.destroy = function(req, res) {
         // create a new variable to hold the track that was placed on the req object.
-        var track = req.track;
-        track.destroy().then(function(){
-            return res.jsonp(track);
+        console.log(req.body);
+        //var track = req.track;
+        /*track.destroy().then(function(){
+            return res.json(track);
         }).catch(function(err){
             return res.render('error', {
                 error: err,
                 status: 500
             });
-        });
+        });*/
     };
 
     // Show a single track ***********************************************************
     exports.show = function(req, res) {
         // Sending down the track that was just preloaded by the tracks.track function
         // and saves track on the req object.
-        return res.jsonp(req.track);
+        return res.json(req.track);
     };
 
-    */
     // List all tracks ***********************************************************
     exports.all = function(req, res) {        
         db.Track.findAll()
         .then(function(data){
+            // console.log(data);
             return res.status(200).json(data);
         })
         .error(function(error) {

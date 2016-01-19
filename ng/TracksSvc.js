@@ -8,7 +8,7 @@ angular.module('myapp')
 	this.fetchTracks = function(){
 		return $http.get('/tracks')
 		.then(function (response) {
-			console.log(response);
+			// console.log(response);
 			return response.data
 		});
 	};
@@ -18,13 +18,23 @@ angular.module('myapp')
 		return $http.post('/tracks', track)	
 	}
 
+	// Select a single track and pass back to view to update / remove
+	this.selectTrack = function(id){
+		// console.log("hello from TracksSvc!");
+		// console.log(id);
+	}
+
 	// this.updateTrack = function(){}
 
 	// this.deselectTrack = function(){}
 
-	// this.removeTrack = function(track._id){}
+	// Remove a single track from the database
+	this.removeTrack = function(id){
+		console.log(id);
+		//return $http.delete('/tracks/' + id);
+	}
 
-	// this.editTrack = function(track._id){}
+	
 
 
 })

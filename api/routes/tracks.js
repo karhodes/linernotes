@@ -15,13 +15,12 @@ module.exports = function () {
 	var tracks = require('../controllers/tracks')();
 
 	// Tracks Routes ****************************************************************
-
-	router.get('/', tracks.all);
-	router.post('/', tracks.create);
-
+	router.get('/', tracks.all); // Get all tracks
+	router.post('/', tracks.create); // Create a new track
+	router.delete('/:trackId', tracks.destroy); // Delete a track
    
     /*	
-    	.post(tracks.create);
+
 	router.route('/:trackId')
     	.get(tracks.show)
     	.put(tracks.update)
@@ -31,7 +30,11 @@ module.exports = function () {
 
 // Finish with setting up the trackId param
 // Note: the tracks.tracks function will be called everytime then it will call the next function.
-//router.param('trackId', tracks.track);
+/*router.param('trackId', function (req, res, next, id) {
+  console.log('CALLED ONLY ONCE');
+  next();
+});*/
+
 
 return router;
 
