@@ -61,22 +61,16 @@ module.exports = function() {
     // Show a single track ***********************************************************
     exports.show = function(req, res) {
 
-        console.log("hello from tracks.show");
-
         var trackId = req.params.trackId;
 
-        db.Track.findOne({where: {id: trackId}}).then(function(){
-            res.send("show request sent!");
-            console.log(trackId);
-            return res.json(track);
-        }).catch(function(err){
-            return res.render('error', {
-                error: err,
-                status: 500
-            });
-        });
-        
-        return res.json(req.track);
+        db.Track.findOne({where: {id: trackId}})
+        .then(function(data){
+            console.log(data);
+            return res.status(200).json(data);
+        })
+        .error(function(error) {
+            return res.status(500).json(error);
+        })  
     };
 
     // List all tracks ***********************************************************

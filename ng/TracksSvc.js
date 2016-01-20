@@ -9,7 +9,7 @@ angular.module('myapp')
 		return $http.get('/tracks')
 		.then(function (response) {
 			// console.log(response);
-			return response.data
+			return response.data;
 		});
 	};
 
@@ -18,25 +18,26 @@ angular.module('myapp')
 		return $http.post('/tracks', track)	
 	}
 
-	// Select a single track and pass back to view to update / remove
+	// Select a single track and pass back to view to update *********
 	this.selectTrack = function(id){
-		return $http.get('/tracks/' + id).success(function(response){
-			console.log("I was a success!");
-			$scope.track = response;
+
+		console.log("Hello from selectTrack Service");
+
+		return $http.get('/tracks/' + id)
+		.then(function(response){
+			console.log(response);
+			return response.data;
 		});
 	}
 
 	// this.updateTrack = function(){}
 
-	// this.deselectTrack = function(){}
 
-	// Remove a single track from the database
+
+	// Remove a single track from the database **************************
 	this.removeTrack = function(id){
 		console.log(id);
 		return $http.delete('/tracks/' + id);
 	}
-
 	
-
-
 })

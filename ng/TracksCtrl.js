@@ -27,10 +27,10 @@ angular.module('myapp')
 		// Select a single track ********************************************************
 		// Call selectTrack() from the Track Service
 		$scope.selectTrack = function(id){
-			console.log("Hello from selectTrack!");
-			console.log(id);
-			//TracksSvc.selectTrack();
-			// refresh();
+			TracksSvc.selectTrack(id)
+			.then(function(track){
+				$scope.track = track;
+			})			
 		};
 
 		// Remove a single track ********************************************************
