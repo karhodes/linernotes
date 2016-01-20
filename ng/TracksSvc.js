@@ -31,7 +31,7 @@ angular.module('myapp')
 	// Remove a single track from the database
 	this.removeTrack = function(id){
 		console.log(id);
-		//return $http.delete('/tracks/' + id);
+		return $http.delete('/tracks/delete/' + id);
 	}
 
 	

@@ -62,9 +62,10 @@ module.exports = function() {
 
     // Delete a track ***********************************************************
     exports.destroy = function(req, res) {
-        // create a new variable to hold the track that was placed on the req object.
-        console.log(req.body);
-        //var track = req.track;
+        // Create a new variable to hold the track that was placed on the req object.
+        res.send("delete request sent!");
+
+        //var track = req.body;
         /*track.destroy().then(function(){
             return res.json(track);
         }).catch(function(err){

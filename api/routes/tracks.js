@@ -30,10 +30,7 @@ module.exports = function () {
 
 // Finish with setting up the trackId param
 // Note: the tracks.tracks function will be called everytime then it will call the next function.
-/*router.param('trackId', function (req, res, next, id) {
-  console.log('CALLED ONLY ONCE');
-  next();
-});*/
+// router.param('trackId', tracks.track);
 
 
 return router;

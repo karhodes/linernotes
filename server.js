@@ -1,5 +1,6 @@
 // LinerNotes Application: Server 
 
+// Application Dependencies:
 var express 	= require('express');
 var morgan 		= require('morgan');
 var app 		= express();
@@ -7,6 +8,10 @@ var fs 			= require('fs');
 var path 		= require('path');
 var router 		= require('./api/routes/tracks.js');
 var port 		= process.env.PORT || 7000;
+
+// Socket.io Dependencies
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
 
 
 // App Configuration **********************************
@@ -35,7 +40,18 @@ app.use('/tracks',router());
  	res.render('index.html.ejs');
  })
 
+ // Socket.io *****************************************
+ // Reference to add more functionality:
+ // http://socket.io/get-started/chat/
+
+ io.on('connection', function(socket){
+ 	console.log('a user connected');
+ 	socket.on('disconnect', function(){
+    	console.log('user disconnected');
+  	});
+ })
+
 // Start The Server *************************************
-var server = app.listen(port, function() {
-  console.log('Magic Happens on Port ' + port);
-});
+http.listen(port, function(){
+	console.log('Magic Happens on Port ' + port);
+})
