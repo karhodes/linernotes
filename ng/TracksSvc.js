@@ -20,8 +20,10 @@ angular.module('myapp')
 
 	// Select a single track and pass back to view to update / remove
 	this.selectTrack = function(id){
-		// console.log("hello from TracksSvc!");
-		// console.log(id);
+		return $http.get('/tracks/' + id).success(function(response){
+			console.log("I was a success!");
+			$scope.track = response;
+		});
 	}
 
 	// this.updateTrack = function(){}
@@ -31,7 +33,7 @@ angular.module('myapp')
 	// Remove a single track from the database
 	this.removeTrack = function(id){
 		console.log(id);
-		return $http.delete('/tracks/delete/' + id);
+		return $http.delete('/tracks/' + id);
 	}
 
 	

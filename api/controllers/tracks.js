@@ -6,25 +6,6 @@ module.exports = function() {
     // Module dependencies ***********************************************************
     var db = require('../../db.js');
 
-    /*
-    // Find track by id ***********************************************************
-    // Note: This is called every time that the parameter :trackId is used in a URL. 
-    // Its purpose is to preload the track on the req object then call the next function. 
-    exports.track = function(req, res, next, id) {
-        console.log('id => ' + id);
-        db.Track.find({where: {id: id}}).then(function(track){
-            if(!track) {
-                return next(new Error('Failed to load track ' + id));
-            } else {
-                req.track = track;
-                return next();            
-            }
-        }).catch(function(err){
-            return next(err);
-        });
-    };
-
-    */
     // Create an entry (track) in the DB ********************************************
     exports.create = function(req, res, next) {
         db.Track.create({
@@ -42,7 +23,7 @@ module.exports = function() {
     exports.update = function(req, res) {
 
         // create a new variable to hold the track that was placed on the req object.
-        var track = req.track;
+        var trackId = req.params.trackId;
 
         track.updateAttributes({
             artist: req.body.artist,
@@ -62,24 +43,39 @@ module.exports = function() {
 
     // Delete a track ***********************************************************
     exports.destroy = function(req, res) {
-        // Create a new variable to hold the track that was placed on the req object.
-        res.send("delete request sent!");
-
-        //var track = req.body;
-        /*track.destroy().then(function(){
+        
+        var trackId = req.params.trackId;
+        
+        db.Track.destroy({where: {id: trackId}}).then(function(){
+            res.send("delete request sent!");
+            console.log(trackId);
             return res.json(track);
         }).catch(function(err){
             return res.render('error', {
                 error: err,
                 status: 500
             });
-        });*/
+        });
     };
 
     // Show a single track ***********************************************************
     exports.show = function(req, res) {
-        // Sending down the track that was just preloaded by the tracks.track function
-        // and saves track on the req object.
+
+        console.log("hello from tracks.show");
+
+        var trackId = req.params.trackId;
+
+        db.Track.findOne({where: {id: trackId}}).then(function(){
+            res.send("show request sent!");
+            console.log(trackId);
+            return res.json(track);
+        }).catch(function(err){
+            return res.render('error', {
+                error: err,
+                status: 500
+            });
+        });
+        
         return res.json(req.track);
     };
 

@@ -17,7 +17,8 @@ module.exports = function () {
 	// Tracks Routes ****************************************************************
 	router.get('/', tracks.all); // Get all tracks
 	router.post('/', tracks.create); // Create a new track
-	router.delete('/:trackId', tracks.destroy); // Delete a track
+	router.delete('/:trackId', tracks.destroy); // Destroy a track
+	router.get('/:trackId', tracks.show); // Show a single track    
    
     /*	
 
@@ -26,12 +27,6 @@ module.exports = function () {
     	.put(tracks.update)
     	.delete(tracks.destroy);
     */	
-
-
-// Finish with setting up the trackId param
-// Note: the tracks.tracks function will be called everytime then it will call the next function.
-// router.param('trackId', tracks.track);
-
 
 return router;
 

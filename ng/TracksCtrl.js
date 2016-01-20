@@ -21,6 +21,7 @@ angular.module('myapp')
 		// Call addTrack() from the Track Service and pass in $scope.track
 		$scope.addTrack = function(){
 			TracksSvc.addTrack($scope.track);
+			refresh();
 		};
 
 		// Select a single track ********************************************************
@@ -29,10 +30,12 @@ angular.module('myapp')
 			console.log("Hello from selectTrack!");
 			console.log(id);
 			//TracksSvc.selectTrack();
+			// refresh();
 		};
 
 		// Remove a single track ********************************************************
 		$scope.removeTrack = function(id){
 			TracksSvc.removeTrack(id);
+			refresh();
 		};
 }]);
