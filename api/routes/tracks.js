@@ -1,4 +1,4 @@
-// LinerNotes application:  API Routes for Tracks
+// LinerNotes application:  API Routes for Tracks (links ng/TracksSvc and api/controllers/tracks)
 
 module.exports = function () {
 
@@ -19,14 +19,7 @@ module.exports = function () {
 	router.post('/', tracks.create); // Create a new track
 	router.delete('/:trackId', tracks.destroy); // Destroy a track
 	router.get('/:trackId', tracks.show); // Show a single track    
-   
-    /*	
-
-	router.route('/:trackId')
-    	.get(tracks.show)
-    	.put(tracks.update)
-    	.delete(tracks.destroy);
-    */	
+    router.put('/update', tracks.update); // Update a single track
 
 return router;
 

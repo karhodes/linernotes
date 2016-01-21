@@ -4,7 +4,7 @@
 angular.module('myapp')
 .service('TracksSvc', function ($http) {
 	
-	// Return all tracks from API *********************************
+	// Return all tracks from API ***************************************
 	this.fetchTracks = function(){
 		return $http.get('/tracks')
 		.then(function (response) {
@@ -13,31 +13,34 @@ angular.module('myapp')
 		});
 	};
 
-	// Add a track to the DB via API *********************************
+	// Add a track to the DB via API ************************************
 	this.addTrack = function (track) {
 		return $http.post('/tracks', track)	
-	}
+	};
 
-	// Select a single track and pass back to view to update *********
+	// Select a single track and pass back to view to update ************
 	this.selectTrack = function(id){
-
-		console.log("Hello from selectTrack Service");
-
 		return $http.get('/tracks/' + id)
 		.then(function(response){
 			console.log(response);
 			return response.data;
 		});
+	};
+
+	// Update a selected track ******************************************
+	this.updateTrack = function(track){
+		return $http.put('/tracks/update/', track)
+		.then(function (response) {
+			console.log(response);
+			return response.data;
+		});
+		refresh();
 	}
-
-	// this.updateTrack = function(){}
-
-
 
 	// Remove a single track from the database **************************
 	this.removeTrack = function(id){
 		console.log(id);
 		return $http.delete('/tracks/' + id);
-	}
+	};
 	
-})
+});
