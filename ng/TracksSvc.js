@@ -34,7 +34,6 @@ angular.module('myapp')
 			console.log(response);
 			return response.data;
 		});
-		refresh();
 	}
 
 	// Remove a single track from the database **************************

@@ -1,3 +1,4 @@
 angular.module('myapp', [
-	'ngRoute'
+	'ngRoute',
+	'btford.socket-io'
 ]);

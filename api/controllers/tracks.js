@@ -13,6 +13,14 @@ module.exports = function() {
             album : req.body.album,
             trackTitle : req.body.trackTitle
         }).then(function(){
+            
+            // Socket io reference:
+            // https://vexxhost.com/resources/tutorials/mean-socket-io-integration-tutorial/
+            var socketio = req.app.get('socketio'); // tack out socket instance from the app container
+            // socketio.sockets.emit('track.created', track); // emit an event for all connected clients
+            socketio.sockets.emit('db.Track.create', function(data){
+                console.log(data);
+            });
             res.redirect('/');
         });
     };

@@ -10,8 +10,10 @@ var router 		= require('./api/routes/tracks.js');
 var port 		= process.env.PORT || 7000;
 
 // Socket.io Dependencies
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
+//var http = require('http').Server(app);
+//var io = require('socket.io')(http);
+var http = require('http');
+var socketio = require('socket.io');
 
 
 // App Configuration **********************************
@@ -43,15 +45,31 @@ app.use('/tracks',router());
  // Socket.io *****************************************
  // Reference to add more functionality:
  // http://socket.io/get-started/chat/
+ // https://vexxhost.com/resources/tutorials/mean-socket-io-integration-tutorial/
 
- io.on('connection', function(socket){
+ // Socket.io Dependencies
+var server = http.createServer(app);
+var io = socketio.listen(server);
+app.set('socketio', io);
+app.set('server', server);
+
+
+io.on('connection', function(socket){
  	console.log('a user connected');
  	socket.on('disconnect', function(){
     	console.log('user disconnected');
   	});
  })
 
+
+
 // Start The Server *************************************
+/*
 http.listen(port, function(){
 	console.log('Magic Happens on Port ' + port);
 })
+*/
+
+app.get('server').listen(port, function(){
+	console.log('Magic Happens on Port ' + port);
+});

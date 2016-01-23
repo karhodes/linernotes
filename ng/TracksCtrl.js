@@ -2,7 +2,14 @@
 // Defines functions between the Tracks view and the Tracks Service (ng)
 
 angular.module('myapp')
-	.controller('TracksCtrl', ["$scope", "TracksSvc", function ($scope, TracksSvc) {
+	// Socket.io reference:
+	// http://charandeepmatta.com/2014/06/08/integrating-socket-io-with-mean/
+	// https://vexxhost.com/resources/tutorials/mean-socket-io-integration-tutorial/
+	.factory('mySocket', function(socketFactory) {
+    	return socketFactory();
+	})
+
+	.controller('TracksCtrl', ["$scope", "TracksSvc", "mySocket", function ($scope, TracksSvc, mySocket) {
 		
 		// Refresh the page *********************************************************
 		// Call fetchTracks() from the Track Service to grab all tracks from API
@@ -23,6 +30,12 @@ angular.module('myapp')
 			TracksSvc.addTrack($scope.track);
 			refresh();
 		};
+
+		// Listening for the article.created event; sending track to the console
+		/*Socket.on('article.created', function(track) {
+    		console.log(track);
+		});*/
+
 
 		// Select a single track *****************************************************
 		// Call selectTrack() from the Track Service, pass in track's id
@@ -48,5 +61,5 @@ angular.module('myapp')
 		}
 
 		// Deslect a track (remove from form fields) *********************************
-
+		// Todo:  Define this
 }]);
