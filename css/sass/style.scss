@@ -1,5 +1,9 @@
-﻿@import url(http://fonts.googleapis.com/css?family=Raleway:400,700,300);
-$font-family-base: 'Raleway', sans-serif;
-// Import bootstrap and fontawesome
+﻿// Vendor Dependencies
 @import "bootstrap";
 @import "font-awesome";
+
+
+// Authored dependencies
+@import "variables";
+@import "fonts";
+@import "layouts";

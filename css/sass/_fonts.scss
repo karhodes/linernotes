@@ -1,0 +1,27 @@
+// Import Fonts from Google Fonts *****************************************
+// @import url(http://fonts.googleapis.com/css?family=Raleway:400,700,300);
+@import url(https://fonts.googleapis.com/css?family=Stint+Ultra+Expanded);
+@import url(https://fonts.googleapis.com/css?family=Pontano+Sans);
+
+// Define font variables **************************************************
+$font-family-base: 'Pontano Sans', sans-serif;
+$font-family-accent: 'Stint Ultra Expanded', cursive;
+
+// Define header & body styles ********************************************
+h1{
+	font-family: $font-family-accent;
+	color: $color-secondary;
+}
+
+
+
+.section-header {
+	margin-top: 80px;
+	margin-bottom: 30px;
+}
+
+body {
+	font-family: $font-family-base;
+	color: $color-secondary;
+}
+

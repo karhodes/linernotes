@@ -37,8 +37,39 @@ var db = require('./db.js');
 // Tell app which router to use...
 app.use('/tracks',router());
 
+// Serve static files **********************************
+// Todo:  Incorporate into index.html & views
+// Delete these routes once incorporated
+
+// Allows for navigation to the static site
+// Variable to refer to the HTML directory
+var html_dir = './html/';
+
+// Note: route names need not match the file name
+app.get('/static/home', function(req, res) {
+    res.sendfile(__dirname + '/public/html/index.html');
+});
+
+app.get('/static/search_results', function(req, res) {
+    res.sendfile(html_dir + 'search_results.html');
+});
+
+app.get('/static/artist_details', function(req, res) {
+    res.sendfile(html_dir + 'artist_details.html');
+});
+
+app.get('/static/artist_credits', function(req, res) {
+    res.sendfile(html_dir + 'artist_credits.html');
+});
+
+app.get('/static/track_details', function(req, res) {
+    res.sendfile(html_dir + 'track_details.html');
+});
+
+// End of static files ********************************
+
 // Allows for navigation from other pages than homepage
- app.get('*', function(req, res){
+app.get('/', function(req, res){
  	res.render('index.html.ejs');
  })
 

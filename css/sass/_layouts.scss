@@ -1,0 +1,46 @@
+// LinerNotes Application:  Images SCSS partial
+
+body {
+	background-color: $color-background;
+}
+
+// Navigation Bar ******************************************************************
+.navbar{
+	margin :			0;
+	border-radius:		0;
+}
+
+// Set an image as the background for the jumbotron *******************************
+// Good reference here: http://stackoverflow.com/questions/20914711/bootstrap-3-jumbotron-background-image-effect
+.jumbotron{
+	background : 		url('../images/cd_stack_left2.jpg');
+  	background-repeat :	no-repeat;
+	margin :			0;
+	width : 			100%;
+	height:				500px;
+}
+
+// hr tag **************************************************************************
+hr { 
+    display: block;
+    margin-top: 1.0em;
+    margin-bottom: 0.5em;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-style: inset;
+    border-width: 1px;
+}
+
+// Footer **************************************************************************
+.footer {
+  background-color: #1b1b1b;
+  background-image: -moz-linear-gradient(top, #222222, #111111);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#222222), to(#111111));
+  background-image: -webkit-linear-gradient(top, #222222, #111111);
+  background-image: -o-linear-gradient(top, #222222, #111111);
+  background-image: linear-gradient(to bottom, #222222, #111111);
+  background-repeat: repeat-x;
+  border-color: #252525;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', endColorstr='#ff111111', GradientType=0);
+  color: #ffffff;
+}

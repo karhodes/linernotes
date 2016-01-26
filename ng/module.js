@@ -1,4 +1,4 @@
 angular.module('myapp', [
 	'ngRoute',
-	'btford.socket-io'
+	//'btford.socket-io' --> failing to instantiate
 ]);
