@@ -1,0 +1,11 @@
+// LinerNotes Application:  Artist Details SCSS partial
+
+// Set an image as the background for the jumbotron *******************************
+// Good reference here: http://stackoverflow.com/questions/20914711/bootstrap-3-jumbotron-background-image-effect
+.artist-jumbo {
+	background : 		url('../images/david_bowie_pic_lg.jpeg');
+	background-repeat :	no-repeat;
+	margin :			0;
+	width : 			100%;
+	height:				500px;
+}

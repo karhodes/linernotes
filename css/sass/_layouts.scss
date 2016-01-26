@@ -1,5 +1,7 @@
-// LinerNotes Application:  Images SCSS partial
+// LinerNotes Application:  Layouts SCSS partial
+// General layout specification (navigation, body, footer...)
 
+// Body **************************************************************************
 body {
 	background-color: $color-background;
 }
@@ -10,23 +12,13 @@ body {
 	border-radius:		0;
 }
 
-// Set an image as the background for the jumbotron *******************************
-// Good reference here: http://stackoverflow.com/questions/20914711/bootstrap-3-jumbotron-background-image-effect
-.jumbotron{
-	background : 		url('../images/cd_stack_left2.jpg');
-  	background-repeat :	no-repeat;
-	margin :			0;
-	width : 			100%;
-	height:				500px;
-}
-
 // hr tag **************************************************************************
 hr { 
     display: block;
     margin-top: 1.0em;
     margin-bottom: 0.5em;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 2px;
+    margin-right: 2px;
     border-style: inset;
     border-width: 1px;
 }

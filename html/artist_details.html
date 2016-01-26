@@ -23,8 +23,106 @@
 <body>
 
 <body>
+
+	<!-- Navigation Bar -->
+	<!-- Todo:  Fix dropdown menus -->
+	<!-- Todo:  Add logo -->
+	<nav class="navbar navbar-default navbar-inverse">
+  		<div class="container-fluid">
+    		<!-- Brand and toggle get grouped for better mobile display -->
+    		<div class="navbar-header">
+      			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        			<span class="sr-only">Toggle navigation</span>
+        			<span class="icon-bar"></span>
+        			<span class="icon-bar"></span>
+        			<span class="icon-bar"></span>
+      			</button>
+      			<a class="navbar-brand" href="#">Logo Goes Here</a>
+    		</div>
+
+    		<!-- Collect the nav links, forms, and other content for toggling -->
+    		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      			<form class="navbar-form navbar-left" role="search">
+        			<div class="form-group">
+          				<input type="text" class="form-control" placeholder="Search">
+        			</div>
+        			<button type="submit" class="btn btn-default">Submit</button>
+      			</form>
+      			<ul class="nav navbar-nav navbar-right">
+ 					<li class="dropdown">
+          				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Browse Music<span class="caret"></span></a>
+          				<ul class="dropdown-menu">
+        					<li><a href="#">Artists</a></li>
+        					<li><a href="#">Albums</a></li>
+        					<li><a href="#">Tracks</a></li>
+        				</ul>
+        			</li>
+        			<li class="dropdown">
+          				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Your LinerNotes<span class="caret"></span></a>
+          				<ul class="dropdown-menu">
+            				<li><a href="#">Sign In</a></li>
+            				<li role="separator" class="divider"></li>
+            				<li><a href="#">Lists</a></li>
+            				<li><a href="#">Ratings</a></li>
+            				<li><a href="#">Friends</a></li>
+          				</ul>
+        			</li>
+      			</ul>
+    		</div><!-- /.navbar-collapse -->
+  		</div><!-- /.container-fluid -->
+	</nav>
 	
-	<i>Home static page</i>
+	<!-- Jumbotron -->
+	<!-- Todo:  resize image to fill space -->
+	<div class="jumbotron artist-jumbo">
+		<div class = "container">
+		</div>	
+	</div>
+
+	<div class="container">
+
+		<!-- Header Section -->
+		<h1>David Bowie</h1>
+		<h2>Singer   |   Songwriter   |   Producer</h2>
+		<p>Brief bio...</p>
+
+		<hr>
+
+		<!-- Details Section -->
+		<h1>Details</h1>
+		<div class="row">
+			<div class="col-md-4">
+				<img src = "../images/david_bowie_pic2.jpg" class="img-responsive">
+			</div>
+			<div class="col-md-8">
+				<p>Born:  January 8, 1947</p>
+				<p>Died:  January 10, 2016</p>
+				<p>Genres:  Art Rock, Glam Rock, Pop, Electronic, Experimental</p>
+				<p>Instruments:  Vocals, Guitar, Saxophone</p>
+			</div>
+		</div>	
+
+		<hr>
+
+		<!-- Music Credits -->
+		<!-- Link to the artist credits page (by role) -->
+		<h1>Music Credits</h1>
+		<h2><a href="/static/artist_credits">Singer (199)</a></h2>
+		<h2><a href="/static/artist_credits">Songwriter (157)</a></h2>
+		<h2><a href="/static/artist_credits">Producer (132)</a></h2>
+		<h2><a href="/static/artist_credits">Guitar (131)</a></h2>
+		<h2><a href="/static/artist_credits">Saxophone(112)</a></h2>
+
+		<hr>
+
+		<!-- Trivia & Community -->
+		<!-- Links to Triva page & Community Board page -->
+		<h1>Trivia</h1>
+		<h1>Community Board</h1>
+
+	</div>	
+
+	<hr>
 
 	<ul>
 		<li><a href = "/static/home">Static site</a></li>
@@ -33,6 +131,15 @@
 		<li><a href = "/static/artist_credits">Artist Credits</a></li>
 		<li><a href = "/static/track_details">Track Details</a></li>
 	</ul>
+
+
+	<!-- Footer -->
+	<!-- Todo:  Add copyright, social media, etc -->
+	<footer class = "footer">
+		<div class="container">
+		<p>Footer information</p>
+		</div>
+	</footer>
 
 </body>
 </html>
