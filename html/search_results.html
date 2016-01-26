@@ -7,7 +7,8 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<title>Liner Notes</title>
+	<!-- todo:  add icon to title bar -->
+	<title>LinerNotes</title>
 
 	<!-- CSS -->
 
@@ -20,8 +21,142 @@
 </head>
 
 <body>
+
+<!-- Navigation Bar -->
+	<nav class="navbar navbar-default navbar-inverse">
+  		<div class="container-fluid">
+    		<!-- Brand and toggle get grouped for better mobile display -->
+    		<div class="navbar-header">
+      			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        			<span class="sr-only">Toggle navigation</span>
+        			<span class="icon-bar"></span>
+        			<span class="icon-bar"></span>
+        			<span class="icon-bar"></span>
+      			</button>
+      			<a class="navbar-brand" href="#">Logo Goes Here</a>
+    		</div>
+
+    		<!-- Collect the nav links, forms, and other content for toggling -->
+    		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      			<form class="navbar-form navbar-left" role="search">
+        			<div class="form-group">
+          				<input type="text" class="form-control" placeholder="Search">
+        			</div>
+        			<button type="submit" class="btn btn-default">Submit</button>
+      			</form>
+      			<ul class="nav navbar-nav navbar-right">
+ 					<li class="dropdown">
+          				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Browse Music<span class="caret"></span></a>
+          				<ul class="dropdown-menu">
+        					<li><a href="#">Artists</a></li>
+        					<li><a href="#">Albums</a></li>
+        					<li><a href="#">Tracks</a></li>
+        				</ul>
+        			</li>
+        			<li class="dropdown">
+          				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Your LinerNotes<span class="caret"></span></a>
+          				<ul class="dropdown-menu">
+            				<li><a href="#">Sign In</a></li>
+            				<li role="separator" class="divider"></li>
+            				<li><a href="#">Lists</a></li>
+            				<li><a href="#">Ratings</a></li>
+            				<li><a href="#">Friends</a></li>
+          				</ul>
+        			</li>
+      			</ul>
+    		</div><!-- /.navbar-collapse -->
+  		</div><!-- /.container-fluid -->
+	</nav>
+
+	<div class="container">
+		<h1>Search Results</h1>
+		<h2>for "David"</h2>
+	</div>
+
+	<hr>
+
+	<!-- Tables of Results, limit to 3 per category, see more? -->
+	<!-- Todo:  Add pagination? -->
+	<!-- Todo:  Resize images to be of same size -->
+	<div class="container">
+		
+		<!-- Table of Artists matching query -->
+		<h2>Artists</h2>
+		<table>
+			<tr>
+				<td class="col-md-4">
+					<img src = "../images/david_bowie_pic.jpeg">
+				</td>
+				<td class="col-md-8">
+					<h3>David Bowie<h3>
+					<h4>Singer</h4>
+				</td>
+			</tr>
+			<tr>
+				<td class="col-md-4">
+					<img src = "../images/dave_grohl.jpeg">
+				</td>
+				<td class="col-md-8">
+					<h3>Dave Grohl<h3>
+					<h4>Drummer</h4>
+				</td>
+			</tr>
+			<tr>
+				<td class="col-md-4">
+					<img src = "../images/david_lee_roth.jpeg">
+				</td>
+				<td class="col-md-8">
+					<h3>David Lee Roth<h3>
+					<h4>Singer</h4>
+				</td>
+			</tr>
+		</table>
+		<h3><a href="#">See more Artists...</a></h3>
+
+		<hr>
+
+		<!-- Table of Albums matching query -->
+		<h2>Albums</h2>
+		<table>
+			<tr>
+				<td class="col-md-4">
+					<img src = "../images/david_bowie_album.jpeg">
+				</td>
+				<td class="col-md-8">
+					<h3>David Bowie (1967)<h3>
+					<h4>David Bowie</h4>
+				</td>
+			</tr>
+			<tr>
+				<td class="col-md-4">
+					<img src = "../images/davids_album.jpg">
+				</td>
+				<td class="col-md-8">
+					<h3>David's Album (1969)<h3>
+					<h4>Joan Baez</h4>
+				</td>
+			</tr>	
+		</table>
+
+		<hr>
+
+		<!-- Table of Tracks matching query -->
+		<h2>Tracks</h2>
+		<table>
+			<tr>
+				<div class="col-md-4">
+					<img src = "../images/davids_song.jpg">
+				</div>
+				<div class="col-md-8">
+					<h3>David's Song<h3>
+					<h4>Cher</h4>
+					<h4>Half Breed</h4>
+				</div>
+			</tr>
+		</table>	
+	</div>
 	
-	<i>Home static page</i>
+	<hr>
 
 	<ul>
 		<li><a href = "/static/home">Static site</a></li>
@@ -30,6 +165,12 @@
 		<li><a href = "/static/artist_credits">Artist Credits</a></li>
 		<li><a href = "/static/track_details">Track Details</a></li>
 	</ul>
+
+	<footer class = "footer">
+		<div class="container">
+		<p>Footer information</p>
+		</div>
+	</footer>
 
 </body>
 </html>
